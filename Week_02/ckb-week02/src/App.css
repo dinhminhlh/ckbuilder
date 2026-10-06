@@ -1,0 +1,92 @@
+.container {
+  width: 900px;
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.card {
+  background: #131a27;
+  border: 1px solid #263247;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  color: #aeb8c8;
+}
+
+input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 8px;
+  border: 1px solid #354158;
+  background: #0d1320;
+  color: white;
+  margin: 10px 0 15px;
+}
+
+button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #4f7cff;
+  color: white;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+code {
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  background: #090d15;
+  color: #8fb3ff;
+  overflow-wrap: anywhere;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #0d1422;
+}
+
+.status {
+  color: #ffb86b !important;
+  margin-top: 15px;
+}
+
+.item {
+  padding: 18px 0;
+  border-top: 1px solid #263247;
+}
+
+.item:first-of-type {
+  border-top: 0;
+}
