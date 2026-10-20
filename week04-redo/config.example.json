@@ -1,0 +1,11 @@
+{
+  "rpcUrl": "http://127.0.0.1:8114",
+  "address": "",
+  "recipientAddress": "",
+  "systemScriptsFile": "",
+  "demoAccountIndex": 0,
+  "secretUtf8": "Week04 demo secret",
+  "lockCapacityCkb": "200",
+  "feeRate": 1000,
+  "timeoutMs": 120000
+}

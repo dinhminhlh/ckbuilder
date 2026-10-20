@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm --filter week04-redo build:bundle && node scripts/compile.cjs",
+    "test": "pnpm --filter week04-redo-tests test",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "query": "tsx scripts/demo.ts query",
+    "deploy": "tsx scripts/demo.ts deploy",
+    "lock": "tsx scripts/demo.ts lock",
+    "unlock": "tsx scripts/demo.ts unlock",
+    "devnet": "node scripts/offckb.cjs node",
+    "offckb": "node scripts/offckb.cjs"
+  },
+  "devDependencies": {
+    "@ckb-ccc/core": "^1.23.0",
+    "@offckb/cli": "0.4.13",
+    "@types/node": "22.13.17",
+    "ckb-testtool": "~1.0.3",
+    "pnpm": "10.11.0",
+    "prettier": "~3.5.3",
+    "prettier-plugin-organize-imports": "~4.1.0",
+    "rimraf": "~6.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "~5.8.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "packageManager": "pnpm@10.11.0"
+}
