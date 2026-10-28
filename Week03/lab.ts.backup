@@ -1,0 +1,256 @@
+import { ccc } from '@ckb-ccc/core';
+import * as spore from '@ckb-ccc/spore';
+import { SCRIPTS_SPORE_TESTNET, SCRIPTS_CLUSTER_TESTNET,
+  SCRIPTS_SPORE_MAINNET, SCRIPTS_CLUSTER_MAINNET } from '@ckb-ccc/spore/advanced';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { randomBytes } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { dirname, join, resolve } from 'node:path';
+
+const ROOT = dirname(fileURLToPath(import.meta.url));
+const RPC = 'http://127.0.0.1:8114';
+const stringify = (v: unknown) => JSON.stringify(v, (_, x) => typeof x === 'bigint' ? x.toString() : x, 2);
+const read = (n: string) => JSON.parse(readFileSync(join(ROOT, n), 'utf8').replace(/^\uFEFF/, ''));
+const save = (n: string, v: unknown) => writeFileSync(join(ROOT, n), stringify(v));
+const state = () => existsSync(join(ROOT, 'state.json')) ? read('state.json') : {};
+const patchState = (v: object) => save('state.json', { ...state(), ...v });
+
+async function rpc(method: string, params: unknown[]) {
+  const r = await fetch(RPC, { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) });
+  if (!r.ok) throw new Error(`RPC HTTP ${r.status}`);
+  const b = await r.json();
+  if (b.error) throw new Error(stringify(b.error));
+  return b.result;
+}
+
+function exportedScripts() {
+  const args = ['system-scripts', '--network', 'devnet', '--export-style', 'ccc'];
+  const text = process.platform === 'win32'
+    ? execFileSync('cmd.exe', ['/d', '/s', '/c', 'offckb.cmd ' + args.join(' ')], { encoding: 'utf8' })
+    : execFileSync('offckb', args, { encoding: 'utf8' });
+  const start = text.indexOf('{'), end = text.lastIndexOf('}');
+  if (start < 0 || end < start) throw new Error('Cannot parse OffCKB script export');
+  return JSON.parse(text.slice(start, end + 1));
+}
+
+function localInfo(genesis: any, candidates: (spore.SporeScriptInfoLike | undefined)[]) {
+  for (const transaction of genesis.transactions) {
+    for (let index = 0; index < transaction.outputs_data.length; index++) {
+      const codeHash = ccc.hashCkb(transaction.outputs_data[index]);
+      const info = candidates.find(x => x?.codeHash === codeHash);
+      if (info) return { ...info, cellDeps: [{ cellDep: {
+        outPoint: { txHash: transaction.hash, index }, depType: 'code' as const } }] };
+    }
+  }
+  throw new Error('No supported Spore/Cluster binary in genesis. Use the standard OffCKB 0.4.13 devnet.');
+}
+
+async function initialize() {
+  await rpc('get_tip_header', []);
+  const genesis = await rpc('get_block_by_number', ['0x0']);
+  const scripts = exportedScripts();
+  for (const n of ['Secp256k1Blake160', 'AnyoneCanPay', 'NervosDao', 'XUdt']) {
+    if (!scripts[n]) throw new Error(`Devnet export missing ${n}`);
+  }
+  const info = {
+    genesisHash: genesis.header.hash, scripts,
+    spore: localInfo(genesis, [...Object.values(SCRIPTS_SPORE_TESTNET), ...Object.values(SCRIPTS_SPORE_MAINNET)]),
+    cluster: localInfo(genesis, [...Object.values(SCRIPTS_CLUSTER_TESTNET), ...Object.values(SCRIPTS_CLUSTER_MAINNET)]),
+  };
+  save('devnet.json', info);
+  mkdirSync(join(ROOT, 'private'), { recursive: true });
+  for (const who of ['a', 'b']) {
+    const p = join(ROOT, 'private', `${who}.key`);
+    if (!existsSync(p)) writeFileSync(p, '0x' + randomBytes(32).toString('hex'), { mode: 0o600 });
+  }
+  const a = await wallet('a'), b = await wallet('b');
+  save('accounts.json', { a: a.address, b: b.address });
+  console.log('RPC ready:', RPC);
+  console.log('Wallet A:', a.address);
+  console.log('Wallet B:', b.address);
+  console.log('Devnet scripts discovered; existing private keys preserved.');
+}
+
+async function wallet(who = 'a') {
+  if (!['a', 'b'].includes(who)) throw new Error('Wallet must be a or b');
+  if (!existsSync(join(ROOT, 'devnet.json'))) throw new Error('Run: pnpm exec tsx lab.ts init');
+  const cfg = read('devnet.json');
+  const client = new ccc.ClientPublicTestnet({ url: RPC, fallbacks: [], scripts: cfg.scripts });
+  const key = readFileSync(join(ROOT, 'private', who + '.key'), 'utf8').replace(/^\uFEFF/, '').trim();
+  const signer = new ccc.SignerCkbPrivateKey(client, key);
+  const obj = await signer.getRecommendedAddressObj();
+  return { cfg, client, signer, lock: obj.script, address: obj.toString() };
+}
+
+async function finish(tx: ccc.Transaction, who: string, label: string, newState: object = {}) {
+  const { signer, client } = await wallet(who);
+  await tx.completeInputsByCapacity(signer);
+  await tx.completeFeeBy(signer, 1000n);
+  const txHash = await signer.sendTransaction(tx);
+  console.log(label + ' tx:', txHash);
+  // Save IDs and transaction hash immediately, even if confirmation waiting fails.
+  patchState({ ...newState, lastTx: txHash, lastAction: label });
+  const records = existsSync(join(ROOT, 'transactions.json')) ? read('transactions.json') : [];
+  records.push({ action: label, txHash, status: 'sent', ...newState });
+  save('transactions.json', records);
+  const result = await client.waitTransaction(txHash);
+  if (!result) throw new Error(`Confirmation pending: ${txHash}. Check the tx before repeating this command.`);
+  records[records.length - 1].status = 'committed'; save('transactions.json', records);
+  console.log('Status: committed');
+  return txHash;
+}
+
+const amount128 = (n: bigint) => {
+  if (n < 0n || n >= 1n << 128n) throw new Error('Amount outside uint128 range');
+  const bytes = new Uint8Array(16);
+  for (let i = 0; i < 16; i++) { bytes[i] = Number(n & 255n); n >>= 8n; }
+  return ccc.hexFrom(bytes);
+};
+const decode128 = (data: ccc.Hex) => {
+  const b = ccc.bytesFrom(data);
+  if (b.length !== 16) throw new Error('This lab supports basic 16-byte xUDT cells only');
+  let n = 0n; for (let i = 15; i >= 0; i--) n = (n << 8n) | BigInt(b[i]); return n;
+};
+const requiredId = (name: 'clusterId' | 'sporeId') => {
+  const id = state()[name]; if (!id) throw new Error(`No ${name}: run its create command first`); return id;
+};
+
+export async function run(command: string, who = 'a', amount = '100') {
+  if (command === 'init') { await initialize(); return; }
+  const { signer, client, lock, address, cfg } = await wallet(who);
+  console.log('Network: OffCKB Devnet'); console.log('Wallet:', address);
+  if (command === 'accounts') { console.log(stringify(read('accounts.json'))); return; }
+  if (command === 'balance') {
+    const balance = ccc.fixedPointToString(await client.getBalanceSingle(lock));
+    console.log('Balance:', balance, 'CKB'); return { address, balance };
+  }
+  if (command === 'cells') {
+    const cells = []; let total = 0n;
+    for await (const c of client.findCellsByLock(lock, undefined, true)) {
+      total += c.cellOutput.capacity;
+      cells.push({ outPoint: c.outPoint, capacityCKB: ccc.fixedPointToString(c.cellOutput.capacity),
+        lock: c.cellOutput.lock, type: c.cellOutput.type ?? null, data: c.outputData });
+    }
+    const result = { address, count: cells.length, totalCKB: ccc.fixedPointToString(total), cells };
+    console.log(stringify(result)); return result;
+  }
+  if (command === 'transactions') {
+    const rows = [];
+    for await (const t of client.findTransactionsByLock(lock, undefined, true, 'desc')) {
+      rows.push(t); if (rows.length === 10) break;
+    }
+    console.log(stringify(rows)); return rows;
+  }
+  if (command === 'ckb-transfer') {
+    const receiver = await wallet(who === 'a' ? 'b' : 'a');
+    if (!/^\d+(\.\d{1,8})?$/.test(amount) || ccc.fixedPointFrom(amount) < ccc.fixedPointFrom('61'))
+      throw new Error('Use an amount of at least 61 CKB with at most 8 decimals');
+    const tx = ccc.Transaction.from({ outputs: [{ capacity: ccc.fixedPointFrom(amount), lock: receiver.lock }], outputsData: ['0x'] });
+    const txHash = await finish(tx, who, 'CKB transfer');
+    const cell = await client.getCellLive({ txHash, index: 0 }, true);
+    if (!cell || !cell.cellOutput.lock.eq(receiver.lock)) throw new Error('Receiver output not verified');
+    console.log('Receiver:', receiver.address); console.log('Received:', amount, 'CKB');
+    return { txHash, receiver: receiver.address, amount, status: 'committed' };
+  }
+  if (command.startsWith('xudt-')) {
+    const saved = state();
+    const type = ccc.Script.from({ ...cfg.scripts.XUdt, args: saved.xudtArgs ?? lock.hash() });
+    if (command === 'xudt-issue') {
+      const n = BigInt(amount); if (n <= 0n) throw new Error('Token amount must be positive');
+      // Owner mode: type args = issuer lock hash; a normal issuer input authorizes minting.
+      const tx = ccc.Transaction.from({ outputs: [{ lock, type }], outputsData: [amount128(n)] });
+      await tx.addCellDepInfos(client, cfg.scripts.XUdt.cellDeps);
+      await finish(tx, who, 'Issue xUDT', { xudtArgs: type.args });
+      console.log('Type args:', type.args); console.log('Issued:', amount);
+      return;
+    }
+    if (!saved.xudtArgs) throw new Error('Run xudt-issue first');
+    let total = 0n; const cells = [];
+    for await (const c of client.findCellsByLock(lock, type, true)) { cells.push(c); total += decode128(c.outputData); }
+    if (command === 'xudt-balance') { console.log('xUDT:', total.toString()); console.log('Type args:', type.args); return; }
+    if (command !== 'xudt-transfer') throw new Error('Unknown xUDT command');
+    const n = BigInt(amount); if (n <= 0n || n > total) throw new Error('Invalid amount or insufficient xUDT');
+    const receiver = await wallet(who === 'a' ? 'b' : 'a');
+    const tx = ccc.Transaction.from({});
+    for (const c of cells) tx.addInput(c);
+    tx.addOutput({ lock: receiver.lock, type }, amount128(n));
+    if (total > n) tx.addOutput({ lock, type }, amount128(total - n));
+    await tx.addCellDepInfos(client, cfg.scripts.XUdt.cellDeps);
+    await finish(tx, who, 'Transfer xUDT');
+    console.log('Receiver:', receiver.address); console.log('Transferred:', amount); return;
+  }
+  if (command === 'cluster-create') {
+    const { tx, id } = await spore.createSporeCluster({ signer,
+      data: { name: 'Daniel CKBuilder Week 03', description: 'Week 03 Devnet practice' }, scriptInfo: cfg.cluster });
+    await finish(tx, who, 'Create Cluster', { clusterId: id });
+    console.log('Cluster ID:', id); return;
+  }
+  if (command === 'cluster-query' || command === 'cluster-transfer') {
+    const id = requiredId('clusterId');
+    const found = await spore.findCluster(client, id, [cfg.cluster]);
+    if (!found) throw new Error('Cluster not live on this Devnet');
+    if (command === 'cluster-query') {
+      console.log(stringify({ id, ...found.clusterData, owner: ccc.Address.fromScript(found.cell.cellOutput.lock, client).toString(), outPoint: found.cell.outPoint })); return;
+    }
+    if (!found.cell.cellOutput.lock.eq(lock)) throw new Error('Select the CURRENT Cluster owner');
+    const receiver = await wallet(who === 'a' ? 'b' : 'a');
+    const { tx } = await spore.transferSporeCluster({ signer, id, to: receiver.lock, scripts: [cfg.cluster] });
+    await finish(tx, who, 'Transfer Cluster');
+    const after = await spore.findCluster(client, id, [cfg.cluster]);
+    if (!after?.cell.cellOutput.lock.eq(receiver.lock)) throw new Error('Cluster new owner not verified');
+    console.log('New owner:', receiver.address); return;
+  }
+  if (command === 'spore-create') {
+    const clusterId = requiredId('clusterId');
+    const found = await spore.findCluster(client, clusterId, [cfg.cluster]);
+    if (!found || !found.cell.cellOutput.lock.eq(lock)) throw new Error('Create using the CURRENT Cluster owner');
+    // Supply the local cluster proof explicitly; never modify frozen SDK configurations.
+    const seed = ccc.Transaction.from({});
+    await seed.completeInputsAddOne(signer);
+    // Minimum-capacity proxy output releases the rest for Spore capacity and fees.
+    seed.addOutput({ lock }, '0x');
+    seed.addCellDeps({ outPoint: found.cell.outPoint, depType: 'code' });
+    const { tx, id } = await spore.createSpore({ signer, tx: seed, scriptInfo: cfg.spore,
+      clusterMode: 'skip', data: { contentType: 'text/plain', content: new TextEncoder().encode("Hello CKBuilders! Daniel's clustered Spore."), clusterId } });
+    await finish(tx, who, 'Create Spore', { sporeId: id });
+    console.log('Spore ID:', id); return;
+  }
+  if (['spore-query', 'spore-transfer', 'spore-melt'].includes(command)) {
+    const id = requiredId('sporeId');
+    const found = await spore.findSpore(client, id, [cfg.spore]);
+    if (!found) {
+      if (command === 'spore-query') { console.log('Spore ID:', id); console.log('Live Spore: NOT FOUND'); return; }
+      throw new Error('Spore not live: already melted, or Devnet changed');
+    }
+    if (command === 'spore-query') {
+      console.log(stringify({ id, owner: ccc.Address.fromScript(found.cell.cellOutput.lock, client).toString(),
+        contentType: found.sporeData.contentType, content: ccc.bytesTo(found.sporeData.content, 'utf8'),
+        clusterId: found.sporeData.clusterId, outPoint: found.cell.outPoint })); return;
+    }
+    if (!found.cell.cellOutput.lock.eq(lock)) throw new Error('Select the CURRENT Spore owner');
+    const receiver = await wallet(who === 'a' ? 'b' : 'a');
+    const result = command === 'spore-transfer'
+      ? await spore.transferSpore({ signer, id, to: receiver.lock, scripts: [cfg.spore] })
+      : await spore.meltSpore({ signer, id, scripts: [cfg.spore] });
+    if (command === 'spore-melt') result.tx.addOutput({ lock }, '0x');
+    const txHash = await finish(result.tx, who, command === 'spore-transfer' ? 'Transfer Spore' : 'Melt Spore');
+    const after = await spore.findSpore(client, id, [cfg.spore]);
+    if (command === 'spore-transfer') {
+      if (!after?.cell.cellOutput.lock.eq(receiver.lock)) throw new Error('Spore new owner not verified');
+      console.log('New owner:', receiver.address);
+    } else {
+      if (after || await client.getCellLive(found.cell.outPoint, true)) throw new Error('Melt state not verified');
+      console.log('Original Cell: spent'); console.log('Live Spore: NOT FOUND');
+      console.log('Capacity returned through outputs of:', txHash);
+    }
+    return;
+  }
+  throw new Error('Unknown command: ' + command);
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const [command, who, amount] = process.argv.slice(2);
+  run(command, who, amount).catch(e => { console.error(e.message); process.exitCode = 1; });
+}

@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:contract": "pnpm --filter week04-redo build:bundle && node scripts/compile.cjs",
+    "test:contract": "pnpm --filter week04-redo-tests test",
+    "build": "npm run typecheck && node node_modules/vite/bin/vite.js build",
+    "typecheck": "tsc --noEmit -p tsconfig.ui.json",
+    "test:unit": "tsx --test tests/*.test.ts",
+    "test": "npm run test:contract && npm run test:unit",
+    "dev": "node node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "preview": "node node_modules/vite/bin/vite.js preview --host 127.0.0.1",
+    "setup": "tsx scripts/setup.ts",
+    "smoke": "tsx scripts/smoke.ts",
+    "debug:fixtures": "tsx scripts/debug-fixtures.ts"
+  },
+  "devDependencies": {
+    "@offckb/cli": "0.4.13",
+    "@types/node": "22.13.17",
+    "ckb-testtool": "~1.0.3",
+    "pnpm": "10.11.0",
+    "prettier": "~3.5.3",
+    "prettier-plugin-organize-imports": "~4.1.0",
+    "rimraf": "~6.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "~5.8.2",
+    "vite": "6.3.6",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "packageManager": "pnpm@10.11.0",
+  "name": "week05-hashlock-dapp",
+  "version": "0.1.0",
+  "dependencies": {
+    "@ckb-ccc/core": "1.23.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}
