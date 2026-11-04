@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-11-04T08:19:57.905Z",
+  "nodeVersion": "v20.18.1",
+  "command": "node --test tests/*.test.mjs",
+  "exitCode": 0,
+  "passed": true,
+  "stdout": "TAP version 13\n# Subtest: CKB conversion preserves one shannon and maximum capacity without float rounding\nok 1 - CKB conversion preserves one shannon and maximum capacity without float rounding\n  ---\n  duration_ms: 1.1737\n  ...\n# Subtest: direct payment requires matching settled balance changes at both nodes\nok 2 - direct payment requires matching settled balance changes at both nodes\n  ---\n  duration_ms: 2.6424\n  ...\n# Subtest: pending TLC or a different channel cannot be counted as verified payment\nok 3 - pending TLC or a different channel cannot be counted as verified payment\n  ---\n  duration_ms: 1.3306\n  ...\n# Subtest: unavailable send response never silently retries the mutation\nok 4 - unavailable send response never silently retries the mutation\n  ---\n  duration_ms: 0.8561\n  ...\n# Subtest: RPC distinguishes rejection, HTTP error and malformed responses\nok 5 - RPC distinguishes rejection, HTTP error and malformed responses\n  ---\n  duration_ms: 0.3545\n  ...\n# Subtest: public payment evidence omits preimage and custom records\nok 6 - public payment evidence omits preimage and custom records\n  ---\n  duration_ms: 0.1124\n  ...\n# Subtest: upstream Perun signature verifies and rejects balance/version/channel/final-flag mutations\nok 7 - upstream Perun signature verifies and rejects balance/version/channel/final-flag mutations\n  ---\n  duration_ms: 19.7225\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 387.4675\n",
+  "stderr": ""
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ckbuilder-week06-payment-channels",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "prepare:fiber": "node scripts/prepare-fiber.mjs",
+    "fiber": "node scripts/fiber.mjs",
+    "perun:vector": "node scripts/perun-vector.mjs",
+    "audit": "node scripts/audit.mjs",
+    "test": "node scripts/check.mjs"
+  },
+  "dependencies": { "@ckb-ccc/core": "1.23.0" }
+}

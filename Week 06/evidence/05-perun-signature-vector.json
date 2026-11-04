@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-04T08:18:50.041Z",
+  "source": "Local JS verification of the pinned upstream Perun Rust signature fixture; no Perun channel execution",
+  "sourceCommit": "6e975e7d2f61a80d1d13b71330a2415086b82242",
+  "upstreamTest": "payment-channel-ckb/devnet/contracts/tests/src/tests.rs::test_signature",
+  "encodedBytes": 185,
+  "messageHex": "0xb90000001400000034000000ac000000b40000000000000000000000000000000000000000000000000000000000000000000000780000001000000020000000240000000a000000000000000b000000000000000400000054000000080000004c0000000c0000002c0000000000000000000000000000000000000000000000000000000000000000000000200000000c0000001c00000000000000000000000000000000000000040000000a000000000000000000000000",
+  "digest": "0xeb4256a8507df2c30000a2e117a0dd3a852866e72fc09b058aaa8356d02529bf",
+  "results": {
+    "originalSignatureValid": true,
+    "changedBalanceRejected": true,
+    "changedVersionRejected": true,
+    "changedChannelRejected": true,
+    "changedFinalFlagRejected": true
+  }
+}

@@ -1,0 +1,16 @@
+﻿{
+    "sourceCommit":  "6e975e7d2f61a80d1d13b71330a2415086b82242",
+    "sourcePath":  "payment-channel-ckb/devnet/contracts/tests/src/tests.rs",
+    "test":  "test_signature",
+    "signatureDer":  "3044022066c65aeea05cb28cc851712e6843ea8aa1bb6b8beca2682c78842a0d78da7716022039da4917d7bdb83c84f82b6dc2d8e91ff935b13766bd0e44239d3a1f0ae195f5",
+    "publicKey":  "022eddb5384f532a60658f6bc392d487b38813b8ae170e365fcbc34d8f869b2e9c",
+    "balancesRaw":  [
+                        "10",
+                        "11"
+                    ],
+    "version":  "10",
+    "channelId":  "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "isFinal":  true,
+    "localDerivedDigest":  "0xeb4256a8507df2c30000a2e117a0dd3a852866e72fc09b058aaa8356d02529bf",
+    "license":  "Apache-2.0; fixture extracted from Perun source, copyright PolyCrypt GmbH and contributors"
+}

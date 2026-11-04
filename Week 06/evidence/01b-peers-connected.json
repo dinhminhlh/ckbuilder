@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-11-04T07:39:59.831Z",
+  "source": "live RPC; not simulated",
+  "genesis": "0x10639e0895502b5688a6be8cf69460d76541bfa4821629d86d62ba0aae3f9606",
+  "alice": {
+    "peers": [
+      {
+        "pubkey": "0313dcf9cf18711b1b473a78ea56222dc44dcbfdf559d24dd937a0657d3bcb108f",
+        "address": "/ip4/16.163.7.105/tcp/8228/p2p/QmdyQWjPtbK4NWWsvy8s69NGJaQULwgeQDT5ZpNDrTNaeV"
+      },
+      {
+        "pubkey": "02881631c58f6950f2802dbbf1e1e9cac39c0a99484606bfd27463c09769654f0d",
+        "address": "/ip4/127.0.0.1/tcp/8238/p2p/QmQskbeGYFftbqr2zj6yNaphWJahZkzdZAjsSACkmEewks"
+      },
+      {
+        "pubkey": "024714ca19abea4ddc0f3863ffdfb2e2cee76af87c477de4bc67c74a83f8140042",
+        "address": "/ip4/54.179.226.154/tcp/8228/p2p/Qmes1EBD4yNo9Ywkfe6eRw9tG1nVNGLDmMud1xJMsoYFKy"
+      }
+    ]
+  },
+  "bob": {
+    "peers": [
+      {
+        "pubkey": "0313dcf9cf18711b1b473a78ea56222dc44dcbfdf559d24dd937a0657d3bcb108f",
+        "address": "/ip4/16.163.7.105/tcp/8228/p2p/QmdyQWjPtbK4NWWsvy8s69NGJaQULwgeQDT5ZpNDrTNaeV"
+      },
+      {
+        "pubkey": "024714ca19abea4ddc0f3863ffdfb2e2cee76af87c477de4bc67c74a83f8140042",
+        "address": "/ip4/54.179.226.154/tcp/8228/p2p/Qmes1EBD4yNo9Ywkfe6eRw9tG1nVNGLDmMud1xJMsoYFKy"
+      },
+      {
+        "pubkey": "03312102be9dbf772e14e031a74ab93fd6d810a7a0adea97e79b24460cdb0748ad",
+        "address": "/ip4/127.0.0.1/tcp/52815/p2p/QmfZQfEuKusLauDnhWKZQf8njk95ddZby1ce7snNRr3fr9"
+      }
+    ]
+  }
+}

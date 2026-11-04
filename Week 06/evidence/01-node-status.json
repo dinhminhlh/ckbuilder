@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-04T07:43:59.898Z",
+  "source": "live RPC; not simulated",
+  "genesis": "0x10639e0895502b5688a6be8cf69460d76541bfa4821629d86d62ba0aae3f9606",
+  "nodes": {
+    "alice": {
+      "pubkey": "03312102be9dbf772e14e031a74ab93fd6d810a7a0adea97e79b24460cdb0748ad",
+      "version": "0.9.1"
+    },
+    "bob": {
+      "pubkey": "02881631c58f6950f2802dbbf1e1e9cac39c0a99484606bfd27463c09769654f0d",
+      "version": "0.9.1"
+    }
+  },
+  "balances": {
+    "alice": {
+      "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdnnvlhxx0hr2jeat7vt4n0cqk5cqgmk8cg2a3kp",
+      "plainCKB": "10000",
+      "totalCKB": "10000"
+    },
+    "bob": {
+      "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdm874uvqzdnfz3tmx6geu8q45ssx75wnc97y8jq",
+      "plainCKB": "10000",
+      "totalCKB": "10000"
+    }
+  },
+  "channels": {
+    "alice": [],
+    "bob": []
+  },
+  "unresolved": null
+}

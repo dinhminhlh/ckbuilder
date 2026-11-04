@@ -1,0 +1,67 @@
+{
+  "capturedAt": "2026-11-04T07:52:33.337Z",
+  "source": "live RPC; not simulated",
+  "genesis": "0x10639e0895502b5688a6be8cf69460d76541bfa4821629d86d62ba0aae3f9606",
+  "channelId": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+  "channels": {
+    "alice": {
+      "channel_id": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+      "state": "Closed",
+      "pubkey": "02881631c58f6950f2802dbbf1e1e9cac39c0a99484606bfd27463c09769654f0d",
+      "local_balance": "0x9502f9000",
+      "remote_balance": "0x95c1b5200",
+      "offered_tlc_balance": "0x0",
+      "received_tlc_balance": "0x0",
+      "channel_outpoint": "0xbd34b627a684cc2e77a240cfc4b2b027009e2e4e794fa396dad0232a73522e1500000000",
+      "shutdown_transaction_hash": "0x867754b5e202463541debfb7a439744bc6c8a7eb5bd25291eea94a60c1cab996",
+      "pending_tlcs": 0
+    },
+    "bob": {
+      "channel_id": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+      "state": "Closed",
+      "pubkey": "03312102be9dbf772e14e031a74ab93fd6d810a7a0adea97e79b24460cdb0748ad",
+      "local_balance": "0x95c1b5200",
+      "remote_balance": "0x9502f9000",
+      "offered_tlc_balance": "0x0",
+      "received_tlc_balance": "0x0",
+      "channel_outpoint": "0xbd34b627a684cc2e77a240cfc4b2b027009e2e4e794fa396dad0232a73522e1500000000",
+      "shutdown_transaction_hash": "0x867754b5e202463541debfb7a439744bc6c8a7eb5bd25291eea94a60c1cab996",
+      "pending_tlcs": 0
+    }
+  },
+  "closeTxHash": "0x867754b5e202463541debfb7a439744bc6c8a7eb5bd25291eea94a60c1cab996",
+  "transactionStatus": "committed",
+  "fundingInputVerified": true,
+  "outputs": [
+    {
+      "capacity": "0xbaa315500",
+      "lock": {
+        "args": "0xbb3fabc6004d9a4515ecda467870569081bd474f",
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type"
+      },
+      "type": null
+    },
+    {
+      "capacity": "0xb9e4590f0",
+      "lock": {
+        "args": "0xb39b3f7319f71aa59eafcc5d66fc02d4c011bb1f",
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type"
+      },
+      "type": null
+    }
+  ],
+  "balances": {
+    "alice": {
+      "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdnnvlhxx0hr2jeat7vt4n0cqk5cqgmk8cg2a3kp",
+      "plainCKB": "9998.99999008",
+      "totalCKB": "9998.99999008"
+    },
+    "bob": {
+      "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdm874uvqzdnfz3tmx6geu8q45ssx75wnc97y8jq",
+      "plainCKB": "20000.99999754",
+      "totalCKB": "20000.99999754"
+    }
+  }
+}

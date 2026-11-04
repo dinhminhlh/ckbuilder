@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-11-04T07:55:53.326Z",
+  "source": "Fresh CKB Testnet and Fiber RPC audit",
+  "channelId": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+  "fundingTxHash": "0xbd34b627a684cc2e77a240cfc4b2b027009e2e4e794fa396dad0232a73522e15",
+  "fundingStatus": "committed",
+  "fundingCapacityCKB": "1000",
+  "closeTxHash": "0x867754b5e202463541debfb7a439744bc6c8a7eb5bd25291eea94a60c1cab996",
+  "closeStatus": "committed",
+  "fundingInputConsumed": true,
+  "fundingFeeCKB": "0.0000071",
+  "closeFeeCKB": "0.00000528",
+  "recipients": {
+    "alice": {
+      "capacityCKB": "498.99999472",
+      "lockArgs": "0xb39b3f7319f71aa59eafcc5d66fc02d4c011bb1f"
+    },
+    "bob": {
+      "capacityCKB": "501",
+      "lockArgs": "0xbb3fabc6004d9a4515ecda467870569081bd474f"
+    }
+  },
+  "payments": [
+    {
+      "paymentHash": "0x5a0c20da45fa674289209075e4372a33de198691b853fdce88cd577b985348a0",
+      "amountShannons": "100000000",
+      "status": "Success"
+    }
+  ],
+  "senderAndReceiverRechecked": true,
+  "perunSignatureExercisePassed": true,
+  "perunDevnetDemoExecuted": false
+}

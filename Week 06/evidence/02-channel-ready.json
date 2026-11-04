@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-04T07:48:45.183Z",
+  "source": "live RPC; not simulated",
+  "genesis": "0x10639e0895502b5688a6be8cf69460d76541bfa4821629d86d62ba0aae3f9606",
+  "channelId": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+  "channels": {
+    "alice": {
+      "channel_id": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+      "state": "ChannelReady",
+      "pubkey": "02881631c58f6950f2802dbbf1e1e9cac39c0a99484606bfd27463c09769654f0d",
+      "local_balance": "0x956257100",
+      "remote_balance": "0x956257100",
+      "offered_tlc_balance": "0x0",
+      "received_tlc_balance": "0x0",
+      "channel_outpoint": "0xbd34b627a684cc2e77a240cfc4b2b027009e2e4e794fa396dad0232a73522e1500000000",
+      "shutdown_transaction_hash": null,
+      "pending_tlcs": 0
+    },
+    "bob": {
+      "channel_id": "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+      "state": "ChannelReady",
+      "pubkey": "03312102be9dbf772e14e031a74ab93fd6d810a7a0adea97e79b24460cdb0748ad",
+      "local_balance": "0x956257100",
+      "remote_balance": "0x956257100",
+      "offered_tlc_balance": "0x0",
+      "received_tlc_balance": "0x0",
+      "channel_outpoint": "0xbd34b627a684cc2e77a240cfc4b2b027009e2e4e794fa396dad0232a73522e1500000000",
+      "shutdown_transaction_hash": null,
+      "pending_tlcs": 0
+    }
+  }
+}

@@ -1,0 +1,11 @@
+﻿{
+    "capturedAt":  "2026-11-04T08:05:37.2250931+00:00",
+    "source":  "Observed process cleanup after successful final audit",
+    "fiberNodesStopped":  true,
+    "closedChannelId":  "0x209c3524a96af28d95e3a6d0d4b186031fed25aa99f0910621fc5c29e8a83407",
+    "automaticBackupsAfterClosure":  {
+                                         "bob":  "1793778812446",
+                                         "alice":  "1793778812172"
+                                     },
+    "keyAndDatabaseFilesPreserved":  true
+}
