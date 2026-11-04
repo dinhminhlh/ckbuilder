@@ -292,10 +292,24 @@ The channel and payment screenshots below present saved RPC results from the com
 
 ---
 
-## 7. Project and Reproduction Guides
+## 7. Running the Local Checks
 
-- [Project overview and environment notes](PROJECT_GUIDE.md).
-- [Fiber walkthrough](RUN_FIBER.md).
-- [Perun walkthrough and pending prerequisites](RUN_PERUN.md).
-- [Concept notes](LEARNING.md).
-- [GitHub submission commands](PUSH_GITHUB.md).
+Install Node.js >=20.19.0, then run the offline checks from this directory:
+
+```powershell
+npm.cmd ci
+npm.cmd test
+npm.cmd run perun:vector
+```
+
+For live Fiber queries, restart the existing nodes in two separate terminals:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Start-Fiber.ps1 -NodeName alice
+```
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Start-Fiber.ps1 -NodeName bob
+```
+
+Then run `npm.cmd run audit` in a third terminal. The original node data is kept locally under the ignored `runtime/` directory and is not included in this repository. A fresh clone cannot query the original nodes without that data. The published JSON and screenshots preserve the completed exercise results.
