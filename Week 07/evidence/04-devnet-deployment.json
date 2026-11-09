@@ -1,0 +1,89 @@
+{
+  "capturedAt": "2026-11-04T11:27:43.896856+00:00",
+  "source": "live isolated CKB Devnet RPC",
+  "chain": "ckb_dev",
+  "genesis": "0x7cb7985f40f22268144f02615ef06de89a3effd82ebe51f1ae8b66be891acc75",
+  "tipBeforeDemo": "0x15",
+  "deployedScripts": [
+    {
+      "name": "sudt",
+      "outPoint": {
+        "tx_hash": "0x064d12ac71cf4d1ae491dac45131387dbd066a504b73da7f3e47d530cf72912d",
+        "index": "0x0"
+      },
+      "codeHash": "0xd11ee35f6b9cf0fcbc9eeab395735fa4fac6a6cc07e7ab788e99e82db4bdce7d",
+      "live": true,
+      "deploymentStatus": "committed"
+    },
+    {
+      "name": "pcts",
+      "outPoint": {
+        "tx_hash": "0x064d12ac71cf4d1ae491dac45131387dbd066a504b73da7f3e47d530cf72912d",
+        "index": "0x1"
+      },
+      "codeHash": "0x46fd8bfc6b9eaf8212e9d929e7ed9e19d87f206aa8818f9465fd078cf5c8da8f",
+      "live": true,
+      "deploymentStatus": "committed"
+    },
+    {
+      "name": "pcls",
+      "outPoint": {
+        "tx_hash": "0x064d12ac71cf4d1ae491dac45131387dbd066a504b73da7f3e47d530cf72912d",
+        "index": "0x2"
+      },
+      "codeHash": "0xa155831263415702315912cb76ef9cc8c037185f09b6821b596600208697a415",
+      "live": true,
+      "deploymentStatus": "committed"
+    },
+    {
+      "name": "pfls",
+      "outPoint": {
+        "tx_hash": "0x064d12ac71cf4d1ae491dac45131387dbd066a504b73da7f3e47d530cf72912d",
+        "index": "0x3"
+      },
+      "codeHash": "0x6bb760a3825d7b3f3ec6a754622520ba4e3277888073370d1a9ab76a297bd3a0",
+      "live": true,
+      "deploymentStatus": "committed"
+    },
+    {
+      "name": "vcts",
+      "outPoint": {
+        "tx_hash": "0x87824f535210429eca0a7ec81af70588ba2ca2425cd79c02c9cada1f7ae81374",
+        "index": "0x0"
+      },
+      "codeHash": "0x5774d89fe2bedaf620f21790166c3b947f64e389b98ba491f9c91c539c08f430",
+      "live": true,
+      "deploymentStatus": "committed"
+    },
+    {
+      "name": "vcls",
+      "outPoint": {
+        "tx_hash": "0x87824f535210429eca0a7ec81af70588ba2ca2425cd79c02c9cada1f7ae81374",
+        "index": "0x1"
+      },
+      "codeHash": "0xb592d0ac01d422d99562b48c241afa54ad1bce969011c550d3ddbc1a6c8ad68f",
+      "live": true,
+      "deploymentStatus": "committed"
+    }
+  ],
+  "accounts": {
+    "alice": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x9240f13c257fdcf9c3120c7733df23df443eb55a"
+      },
+      "capacityShannons": "5000000000000",
+      "cellCount": 10
+    },
+    "bob": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x0125ad3719a8225689b2c84152347b8efe494fdc"
+      },
+      "capacityShannons": "5000000000000",
+      "cellCount": 10
+    }
+  }
+}

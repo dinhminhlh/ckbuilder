@@ -1,0 +1,67 @@
+{
+  "capturedAt": "2026-11-09T15:36:21.706369+00:00",
+  "source": "native RISC-V contract build in isolated WSL",
+  "exitCode": 0,
+  "binaries": [
+    {
+      "name": "perun-channel-lockscript",
+      "size": 61848,
+      "sha256": "9398846433dcff5f3b6abf9378fc674ec7d6176db319e633d8672b83981b7bdb"
+    },
+    {
+      "name": "perun-channel-lockscript.debug",
+      "size": 32925680,
+      "sha256": "e5b265dfd6dc2af968733b30194cc8514b5cf3fb52e8f2f36db3a6a594778629"
+    },
+    {
+      "name": "perun-channel-typescript",
+      "size": 320520,
+      "sha256": "47759845728b9155fed300e8e63de047532567b911dbc7bfd22e907c4281cfce"
+    },
+    {
+      "name": "perun-channel-typescript.debug",
+      "size": 36437072,
+      "sha256": "bcc2242433d57b41e7488bfc0d1107a98a413b000df1c64fdf3058d5b6a19846"
+    },
+    {
+      "name": "perun-funds-lockscript",
+      "size": 48608,
+      "sha256": "a13b45e7cbab29bffab4b186c555daf50fbd02908903bf488d0fe0d136e02a34"
+    },
+    {
+      "name": "perun-funds-lockscript.debug",
+      "size": 32767384,
+      "sha256": "420909cb30d378738ebbf0b2d7aff5d97f68eddc7d954a22c4a147568a0e7770"
+    },
+    {
+      "name": "perun-vchannel-lockscript",
+      "size": 20480,
+      "sha256": "685dc77d225b46ba3784c724c05bc5aac8a8e8adea3c639512b43c7b82f47d83"
+    },
+    {
+      "name": "perun-vchannel-lockscript.debug",
+      "size": 22604480,
+      "sha256": "8b40fa99213826e838f029ad1b0ef89fa608f6b56210510761e5c4ba9cf2a119"
+    },
+    {
+      "name": "perun-vchannel-typescript",
+      "size": 225176,
+      "sha256": "da145f1ee8bc66ee008c54e0aba3327011645c007c054877c0bb270379dde7cd"
+    },
+    {
+      "name": "perun-vchannel-typescript.debug",
+      "size": 34354176,
+      "sha256": "4d96da2f69368a86aefa4e5dac75cc01acd69ea5cd2ccc7a48244a65365300d8"
+    },
+    {
+      "name": "sample-udt",
+      "size": 34176,
+      "sha256": "677f75e85ceef2cb0106e6b666413caf5b3ef39d099d96f664240351d6941efe"
+    },
+    {
+      "name": "sample-udt.debug",
+      "size": 32643416,
+      "sha256": "c480aeece368dd6136f9af04dd09730194227387cff6433d99d10663f3579f4e"
+    }
+  ]
+}

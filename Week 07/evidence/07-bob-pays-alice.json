@@ -1,0 +1,21 @@
+{
+  "aliceView": {
+    "channelId": "0x8531afbca303f5e6b3fcaf62408452ea6023d8ebeed4fbf4f91ff15f297bce77",
+    "version": 2,
+    "isFinal": false,
+    "aliceShannons": "9500000000",
+    "bobShannons": "10500000000"
+  },
+  "bobView": {
+    "channelId": "0x8531afbca303f5e6b3fcaf62408452ea6023d8ebeed4fbf4f91ff15f297bce77",
+    "version": 2,
+    "isFinal": false,
+    "aliceShannons": "9500000000",
+    "bobShannons": "10500000000"
+  },
+  "capturedAt": "2026-11-04T11:28:00.557556533Z",
+  "source": "live go-perun channel state after protocol operation",
+  "stage": "07-bob-pays-alice",
+  "totalShannons": "20000000000",
+  "viewsMatch": true
+}

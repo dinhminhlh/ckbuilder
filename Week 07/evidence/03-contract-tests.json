@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-11-09T15:36:32.847522+00:00",
+  "source": "upstream Rust contract tests executed in WSL",
+  "exitCode": 0,
+  "summaries": [
+    "test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.12s"
+  ],
+  "tests": [
+    "test tests::test_signature ... ok",
+    "test tests::channel_test_bench ... ok",
+    "test tests::channel_vc_test_bench ... ok"
+  ]
+}

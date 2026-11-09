@@ -1,0 +1,117 @@
+{
+  "capturedAt": "2026-11-09T15:36:06.704704+00:00",
+  "source": "fresh independent CKB Devnet RPC audit",
+  "genesis": "0x7cb7985f40f22268144f02615ef06de89a3effd82ebe51f1ae8b66be891acc75",
+  "channelId": "0x8531afbca303f5e6b3fcaf62408452ea6023d8ebeed4fbf4f91ff15f297bce77",
+  "stateVersions": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "allocations": [
+    {
+      "aliceShannons": "10000000000",
+      "bobShannons": "10000000000",
+      "isFinal": false
+    },
+    {
+      "aliceShannons": "9000000000",
+      "bobShannons": "11000000000",
+      "isFinal": false
+    },
+    {
+      "aliceShannons": "9500000000",
+      "bobShannons": "10500000000",
+      "isFinal": false
+    },
+    {
+      "aliceShannons": "9500000000",
+      "bobShannons": "10500000000",
+      "isFinal": true
+    }
+  ],
+  "bothParticipantsAgree": true,
+  "allocationConserved": true,
+  "channelOutputs": [
+    {
+      "txHash": "0x9e1dcfd2ce735f968ccb2aaa83d8a6c93d4d51e50abb24f65d534e85d44ee4bf",
+      "index": 1,
+      "blockNumber": 30,
+      "stateVersion": 0,
+      "capacityShannons": "80400000000"
+    },
+    {
+      "txHash": "0xca14216dd4f2aba2154b30f6540e6bfd7eb7fbe43400bc0cc60429656d4bd50a",
+      "index": 0,
+      "blockNumber": 34,
+      "stateVersion": 0,
+      "capacityShannons": "80400000000"
+    }
+  ],
+  "settlementTxHash": "0xf3d937021d52ba528dad247ddb1b1b5243aa952644af39346f995c3cb80d290d",
+  "settlementStatus": "committed",
+  "channelInputConsumed": true,
+  "noSuccessorChannelOutput": true,
+  "settlementRecipients": {
+    "alice": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x9240f13c257fdcf9c3120c7733df23df443eb55a"
+      },
+      "outputCapacityShannons": "589800000000"
+    },
+    "bob": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x0125ad3719a8225689b2c84152347b8efe494fdc"
+      },
+      "outputCapacityShannons": "10500000000"
+    }
+  },
+  "transactions": [
+    {
+      "txHash": "0x9e1dcfd2ce735f968ccb2aaa83d8a6c93d4d51e50abb24f65d534e85d44ee4bf",
+      "blockNumber": 30,
+      "status": "committed",
+      "feeShannons": "100000000",
+      "kind": "channel funding"
+    },
+    {
+      "txHash": "0xca14216dd4f2aba2154b30f6540e6bfd7eb7fbe43400bc0cc60429656d4bd50a",
+      "blockNumber": 34,
+      "status": "committed",
+      "feeShannons": "100000000",
+      "kind": "channel funding"
+    },
+    {
+      "txHash": "0xf3d937021d52ba528dad247ddb1b1b5243aa952644af39346f995c3cb80d290d",
+      "blockNumber": 40,
+      "status": "committed",
+      "feeShannons": "100000000",
+      "kind": "settlement"
+    }
+  ],
+  "walletsAfter": {
+    "alice": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x9240f13c257fdcf9c3120c7733df23df443eb55a"
+      },
+      "capacityShannons": "4999300000000",
+      "cellCount": 11
+    },
+    "bob": {
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0x0125ad3719a8225689b2c84152347b8efe494fdc"
+      },
+      "capacityShannons": "5000400000000",
+      "cellCount": 11
+    }
+  }
+}
