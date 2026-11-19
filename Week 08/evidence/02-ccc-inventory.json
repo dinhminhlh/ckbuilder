@@ -1,0 +1,126 @@
+{
+    "capturedAt":  "2026-11-19T13:09:56.9497913Z",
+    "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/9ffef01a181751dacf1edde83ed43fcfb4646ded/packages/docs/content/docs/code-examples.mdx",
+    "sourceCommit":  "9ffef01a181751dacf1edde83ed43fcfb4646ded",
+    "scope":  "All gallery entries tagged playground in pinned CCC docs; programme subset not supplied",
+    "limitation":  "Screenshot existence and checksum are inventory checks, not execution verification. Frontend query-transactions image is not a Playground screenshot. Transfer construction alone does not prove broadcast.",
+    "examples":  [
+                     {
+                         "title":  "Transfer CKB",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transfer.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transfer.ts",
+                         "priorEvidence":  "Week_02/CCC model/03_Transfer_CKB.png",
+                         "evidenceExists":  true,
+                         "evidenceSha256":  "ef05d4913d6d3c98f9e741d71f6ed4518a480cfc871d4dd40b49b504982a5cd5",
+                         "status":  "Prior related screenshot; inspect scope, not proof of complete current example"
+                     },
+                     {
+                         "title":  "Transfer All CKB",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferAll.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferAll.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Transfer UDT Token",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferUdt.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferUdt.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Sign \u0026 Verify Message",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/sign.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/sign.ts",
+                         "priorEvidence":  "Week_02/CCC model/06_Test_Signer.png",
+                         "evidenceExists":  true,
+                         "evidenceSha256":  "46d60988a93eb834939acce33ace262587dc86c3954c750a49c2574c4d2965bf",
+                         "status":  "Prior related screenshot; inspect scope, not proof of complete current example"
+                     },
+                     {
+                         "title":  "Custom UI — Specified Wallet",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/customUi.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/customUi.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Custom UI — All Wallets with Controller",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/customUiWithController.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/customUiWithController.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Query Balance",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryBalance.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryBalance.ts",
+                         "priorEvidence":  "Week_02/CCC model/04_Query_Balance.png",
+                         "evidenceExists":  true,
+                         "evidenceSha256":  "19428656b0bcbe8c0bcfc456621e5d4d663c4ae2e12f25e3302ac807f63a417f",
+                         "status":  "Prior related screenshot; inspect scope, not proof of complete current example"
+                     },
+                     {
+                         "title":  "Query Cells",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryCells.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryCells.ts",
+                         "priorEvidence":  "Week_02/CCC model/05_Query_Cells.png",
+                         "evidenceExists":  true,
+                         "evidenceSha256":  "cd42f327b059d4df035b0ac0235ae667214e585d376a33c3bc511bd00ba634d2",
+                         "status":  "Prior related screenshot; inspect scope, not proof of complete current example"
+                     },
+                     {
+                         "title":  "Query Transactions",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryTransactions.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/queryTransactions.ts",
+                         "priorEvidence":  "Week_02/ckb-week02/Evidence/05_Query_Transactions.png",
+                         "evidenceExists":  true,
+                         "evidenceSha256":  "f57e78ebc3d88623d555a9057fa2b84a1d27d9bac7cf37671bf308ffc8160932",
+                         "status":  "Prior related screenshot; inspect scope, not proof of complete current example"
+                     },
+                     {
+                         "title":  "NervosDAO Deposit \u0026 Withdraw",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/dao.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/dao.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Create Spore DOB",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/createSpore.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/createSpore.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "Transfer Spore DOB",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferSpore.ts",
+                         "source":  "https://raw.githubusercontent.com/ckb-devrel/ccc/refs/heads/master/packages/examples/src/transferSpore.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     },
+                     {
+                         "title":  "DOB Cookbook — Colorful Loot",
+                         "playgroundUrl":  "https://live.ckbccc.com/?src=https://raw.githubusercontent.com/sporeprotocol/dob-cookbook/refs/heads/main/examples/dob0/1.colorful-loot.ts",
+                         "source":  "https://raw.githubusercontent.com/sporeprotocol/dob-cookbook/refs/heads/main/examples/dob0/1.colorful-loot.ts",
+                         "priorEvidence":  null,
+                         "evidenceExists":  false,
+                         "evidenceSha256":  null,
+                         "status":  "No mapped Playground evidence"
+                     }
+                 ]
+}

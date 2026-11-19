@@ -1,0 +1,138 @@
+{
+  "capturedAt": "2026-11-19T13:10:32.851Z",
+  "source": "live CCC SDK public Testnet queries; no signer and no transaction broadcast",
+  "sdkVersion": "1.3.6",
+  "nodeVersion": "v22.23.5",
+  "rpcUrl": "https://testnet.ckb.dev",
+  "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqflz4emgssc6nqj4yv3nfv2sca7g9dzhscgmg28x",
+  "tipBefore": "23115270",
+  "tipAfter": "23115270",
+  "balanceShannons": "127868531838793568",
+  "balanceCKB": "1278685318.38793568",
+  "cells": [
+    {
+      "outPoint": {
+        "txHash": "0x56a1664f1e2972cae2b2c05a4d3d9b8c4ed1620a1b77e1fd3d3d865bdd786316",
+        "index": "0"
+      },
+      "capacityShannons": "14200000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0xedb9927528c3b0b0466d09517309cc89f7098b488b9894046eb8fdfdb9ba3a0d",
+        "index": "0"
+      },
+      "capacityShannons": "14200000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x9a67bdf06ef68364a48b94c2578bfe044ed06418a8eae91e3ebd6c829dc014f5",
+        "index": "2"
+      },
+      "capacityShannons": "14300000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x7a3728f359666d872aa6d87f749f6931c300995e48649e87edb93959b68f4631",
+        "index": "2"
+      },
+      "capacityShannons": "14300000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x8e9ef94a87fe04d012942809e9ea7ba15f1d3131519ef0a2f45ca7db9a03de28",
+        "index": "2"
+      },
+      "capacityShannons": "14300000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x769f878c82aabb7efe85faf179723c0e36fd0d969a8620e538159f081f52c032",
+        "index": "0"
+      },
+      "capacityShannons": "14200000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x45a448a152bfad2de6bb68933996e7e3f49b4fd208638f53011a834346a0608b",
+        "index": "0"
+      },
+      "capacityShannons": "14300000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x13de22e293c3a087714764177c68b4f996d17a35a896c95bd4e7d7ace1cad675",
+        "index": "1"
+      },
+      "capacityShannons": "14400000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x005b60a1580a715ab7871af861412920fdc3a907b4161aeb040652d9676e90e5",
+        "index": "1"
+      },
+      "capacityShannons": "14400000000",
+      "dataBytes": 16
+    },
+    {
+      "outPoint": {
+        "txHash": "0x824b7c1a92aaf0f35c3bf2efc2c46faba129691c5eed1f7750d60a0f31ac5a0f",
+        "index": "1"
+      },
+      "capacityShannons": "14200000000",
+      "dataBytes": 16
+    }
+  ],
+  "transactions": [
+    {
+      "txHash": "0x8f8c79eb6671709633fe6a46de93c0fedc9c1b8a6527a18d3983879542635c9f",
+      "blockNumber": "0"
+    },
+    {
+      "txHash": "0x4aef0c97389906f76fcf0214692df30aebbdd1e0a47a02c56cd1f88f404070c5",
+      "blockNumber": "186"
+    },
+    {
+      "txHash": "0x2969c59c335a3c292ab387ff8166748cfb4154156ada65b1ec4fc190a73c52dc",
+      "blockNumber": "270"
+    },
+    {
+      "txHash": "0x7be24ed7989196de058d417368a8c7131332ff669d19b144bc6f6693a5c5bcd3",
+      "blockNumber": "283"
+    },
+    {
+      "txHash": "0x3c778fac5be0d8b9eb98d6905987a30ebbc1f138cbf67429e49fac316b8a0d95",
+      "blockNumber": "291"
+    },
+    {
+      "txHash": "0xf59c45401c418f323c2eba882d860ed6a6e13c72fe97bd76fd43b7efc9371bca",
+      "blockNumber": "1457"
+    },
+    {
+      "txHash": "0x41f655c43a898d9b052f60f674dffcb407c032136ab9b4daa36c7be1ebd1e1ea",
+      "blockNumber": "1507"
+    },
+    {
+      "txHash": "0xdb37b83ac1911ec8281d28afcbeef48d217bc55e8799bd1d13adb2cb971f023c",
+      "blockNumber": "1951"
+    },
+    {
+      "txHash": "0x5555989d486be4d65a96fa48056626ddfdbc1aea258f92940b87f2205b66a0f4",
+      "blockNumber": "2167"
+    },
+    {
+      "txHash": "0x37b4655b791a496d041a338d714882a669ac4868f902609f2faaf0f70d2fce6f",
+      "blockNumber": "2361"
+    }
+  ],
+  "limitPerList": 10,
+  "note": "Lists are limited samples, not full history. Balance and samples are separate RPC reads, not an atomic snapshot. This is not wallet ownership or Playground UI completion evidence."
+}

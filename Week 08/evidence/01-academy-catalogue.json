@@ -1,0 +1,65 @@
+{
+    "capturedAt":  "2026-11-19T13:09:55.9234553Z",
+    "source":  "https://github.com/Flouse/ckb-academy/tree/370f31f5dc432c5a4b07c81a7731e292235bc420/site/src/content/courses",
+    "sourceCommit":  "370f31f5dc432c5a4b07c81a7731e292235bc420",
+    "ordering":  "localCourses followed by communityCourses, as exported by index.ts",
+    "limitation":  "Source catalogue order, not a programme-issued module numbering or evidence of learning completion.",
+    "courses":  [
+                    {
+                        "position":  1,
+                        "title":  "CKB basic theoretical knowledge",
+                        "url":  "https://academy.ckb.dev/courses/basic-theory",
+                        "kind":  "local",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  2,
+                        "title":  "CKB basic practical operation",
+                        "url":  "https://academy.ckb.dev/courses/basic-operation",
+                        "kind":  "local",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  3,
+                        "title":  "Getting Started With NFTs",
+                        "url":  "https://academy.ckb.dev/courses/nft-getting-started",
+                        "kind":  "local",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  4,
+                        "title":  "L1 Developer Training Course",
+                        "url":  "https://nervos.gitbook.io/developer-training-course/",
+                        "kind":  "community",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  5,
+                        "title":  "Dapps with CKB Workshop",
+                        "url":  "https://www.youtube.com/watch?v=iVjccs3z5q0\u0026list=PLRke1-EE4VWFirxtxtXmW7enINVZP2Lk6",
+                        "kind":  "community",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  6,
+                        "title":  "Construct and Send Your First CKB Transaction",
+                        "url":  "https://blog.cryptape.com/construct-and-send-your-first-ckb-transaction",
+                        "kind":  "community",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  7,
+                        "title":  "CKB Script Programming Series",
+                        "url":  "https://xuejie.space/",
+                        "kind":  "community",
+                        "studyStatus":  "Not verified"
+                    },
+                    {
+                        "position":  8,
+                        "title":  "Start Your CKB Development Journey",
+                        "url":  "https://blog.cryptape.com/start-your-ckb-development-journey",
+                        "kind":  "community",
+                        "studyStatus":  "Not verified"
+                    }
+                ]
+}
