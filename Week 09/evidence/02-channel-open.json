@@ -1,0 +1,31 @@
+{
+  "capturedAt": "2026-11-24T12:10:53.773Z",
+  "command": "arena channel:open 500",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "channelId": "0x26b7343cb8c08a59fc1691f2f5c722eed5b5d2ea2d1d2e221116666d61ad70c5",
+    "fundingTxHash": "0xe4cd55eb87b6389f59e4006d36debe6ab524f282f89439a61c762e4a2ded517f",
+    "server": {
+      "channel_id": "0x26b7343cb8c08a59fc1691f2f5c722eed5b5d2ea2d1d2e221116666d61ad70c5",
+      "state": "ChannelReady",
+      "local_balance": "401",
+      "remote_balance": "401",
+      "offered_tlc_balance": "0",
+      "received_tlc_balance": "0",
+      "pending_tlcs": 0,
+      "channel_outpoint": "0xe4cd55eb87b6389f59e4006d36debe6ab524f282f89439a61c762e4a2ded517f00000000",
+      "shutdown_transaction_hash": null
+    },
+    "player": {
+      "channel_id": "0x26b7343cb8c08a59fc1691f2f5c722eed5b5d2ea2d1d2e221116666d61ad70c5",
+      "state": "ChannelReady",
+      "local_balance": "401",
+      "remote_balance": "401",
+      "offered_tlc_balance": "0",
+      "received_tlc_balance": "0",
+      "pending_tlcs": 0,
+      "channel_outpoint": "0xe4cd55eb87b6389f59e4006d36debe6ab524f282f89439a61c762e4a2ded517f00000000",
+      "shutdown_transaction_hash": null
+    }
+  }
+}

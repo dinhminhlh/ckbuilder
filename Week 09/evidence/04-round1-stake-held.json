@@ -1,0 +1,55 @@
+{
+  "capturedAt": "2026-11-24T12:20:14.950Z",
+  "command": "rps round:check",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "round": {
+      "id": "round-20261124T122008-9b678c",
+      "createdAt": "2026-11-24T12:20:08.616Z",
+      "stake": {
+        "status": "held",
+        "amountCKB": "1",
+        "paymentHash": "0x9b678c0c053c9e3ef2a2e715281101dc8f68cee218033e1fcdf9f9b631c41fd9",
+        "invoice": "fibt1000000001puy0wz86v4jgfw0pnm6vkf4qjxxm9utn7tqk2fp27z55chfmkc7rk5kjg6k2ghvm7d5vw3l9xp956f4w8w0dnjuj223mvxjrkfpxz7m336je5kthvaj6uv8wxzf5pdj0z993lxgm2zcw0500kj2kwd39nxlh365yqfvgf4cwgar87qsk0h2y98hzp74fgckt8wc585cpvn89d0qn26qvfcpnrylfzxxjnwu4m99zduw9ljz84wvc4pvkrezr3pltdnlvq8p2p6epncypjtmn0k7z8lkkw8ut28ph55876xafgfpckqsnur5zrkaphm8d9qjvu78cfseugjqkvulz3ky4cyz0eq0xe653luvt4kcschdrlsq5kny2354jh5gnq5r07qwgqdemnxa",
+        "heldTlcExpiresAt": "2026-11-24T22:20:09.658Z",
+        "settleAttemptedAt": null,
+        "cancelAttemptedAt": null,
+        "resolvedAt": null
+      },
+      "playerMove": null,
+      "outcome": null,
+      "payouts": []
+    },
+    "playerPayment": {
+      "payment_hash": "0x9b678c0c053c9e3ef2a2e715281101dc8f68cee218033e1fcdf9f9b631c41fd9",
+      "status": "Inflight",
+      "payment_preimage": null,
+      "fee": "0x0",
+      "failed_error": null
+    },
+    "channelPendingTlcs": {
+      "server": [
+        {
+          "amount": "0x5f5e100",
+          "payment_hash": "0x9b678c0c053c9e3ef2a2e715281101dc8f68cee218033e1fcdf9f9b631c41fd9",
+          "expiry": "0x1a20fa5203a",
+          "forwarding_channel_id": null,
+          "status": {
+            "Inbound": "Committed"
+          }
+        }
+      ],
+      "player": [
+        {
+          "amount": "0x5f5e100",
+          "payment_hash": "0x9b678c0c053c9e3ef2a2e715281101dc8f68cee218033e1fcdf9f9b631c41fd9",
+          "expiry": "0x1a20fa5203a",
+          "forwarding_channel_id": null,
+          "status": {
+            "Outbound": "Committed"
+          }
+        }
+      ]
+    }
+  }
+}

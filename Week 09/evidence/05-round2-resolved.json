@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-24T12:20:28.794Z",
+  "command": "rps round:resolve",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "round": {
+      "id": "round-20261124T122020-94bb33",
+      "createdAt": "2026-11-24T12:20:20.156Z",
+      "stake": {
+        "status": "settled",
+        "amountCKB": "1",
+        "paymentHash": "0x94bb3325790fb95ce86ec68216ee87b0e901e5c019cf7d2b0c0c115350a63265",
+        "invoice": "fibt1000000001puy0wz86v4jgfw0pnm6vkv9g94l4l8ullncs2j9fv9xansnjcwgs9kaenu3q0yvwynn5467g2sqmhdg0zszqhh3ycjh8rdazcaxz6t6mgenz5zhar7upuca57ennyrve05ej3n98cdqju7y8adqrra0qus0aue0w3hyy685u3pqpacrwpj5zvq5245lkldd50szhesjn6m9suhzkher6r35ynxq4q6eqsnuqpf8u4avqhrmjqtmggtlvd2rq7c42azhp6felpl27c4dn7ju76fp4n7scc7g9qdc27cw0rllsnaen6s477wg60uv0jwm305d4m2clquq7g38ngye53pmlg3hfg768dkf9uvxlagndm876zwgwnu4fvzaqpemykkfx6ufcq8ete25",
+        "heldTlcExpiresAt": "2026-11-24T22:20:21.249Z",
+        "settleAttemptedAt": "2026-11-24T12:20:27.768Z",
+        "cancelAttemptedAt": null,
+        "resolvedAt": "2026-11-24T12:20:28.790Z"
+      },
+      "playerMove": "paper",
+      "outcome": "lose",
+      "payouts": []
+    },
+    "playerStakePayment": {
+      "payment_hash": "0x94bb3325790fb95ce86ec68216ee87b0e901e5c019cf7d2b0c0c115350a63265",
+      "status": "Success",
+      "payment_preimage": "0x033db5275afc9366c7cc17d2400687254bab2d6a1248afe12e37bb61ef52743a",
+      "fee": "0x0",
+      "failed_error": null
+    },
+    "playerWinningsInvoice": null
+  }
+}

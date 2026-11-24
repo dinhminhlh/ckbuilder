@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-11-24T12:20:48.809Z",
+  "command": "rps round:resolve",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "round": {
+      "id": "round-20261124T122040-d60603",
+      "createdAt": "2026-11-24T12:20:40.259Z",
+      "stake": {
+        "status": "refunded",
+        "amountCKB": "1",
+        "paymentHash": "0xd6060374f11323cc839da954df7fccc9dfd4dbdcdfd8914dbf979bdac9e16809",
+        "invoice": "fibt1000000001puy0wz86v4jgfw0pnm6vkulk7fp8f2s658vtsvpepmc2uga27z6uyjdfp35su3j38qzl2mcdsvdp85c5mjtkte0y9n6849j9xtsvgh2l8n64yn4nldj09f6fg2rjk888hk2nfqrvcdm0aczsu77jjfj4c0knmasp7lk23u5qq2ps07q28n58s39e8eayjv3mp5f7mtlwh7dzyd2mggqs3wt4etcljzcpdagp5086z4plqqga6dnkj6drpwu8me23868n358n5v2785hv9a0qmp8vyurl2dtwqz3r8z2pauvtsh6tz4wv3mnn9rmc6yjlha7jg42lss4gl5k0enkms59r09n9uz9ujqnxl6q8lwj9lrur9t3e4spd9l0r4deqlxmpgf6qqc6hcwp",
+        "heldTlcExpiresAt": "2026-11-24T22:20:41.341Z",
+        "settleAttemptedAt": null,
+        "cancelAttemptedAt": "2026-11-24T12:20:47.769Z",
+        "resolvedAt": "2026-11-24T12:20:47.784Z"
+      },
+      "playerMove": "rock",
+      "outcome": "win",
+      "payouts": [
+        {
+          "status": "paid",
+          "amountCKB": "1",
+          "feeCKB": "0",
+          "paymentHash": "0x3749610598c142b11989f4e6981cae3f1f0b1427d9a7f39584e33fd9804e1338",
+          "failedError": null,
+          "sentAt": "2026-11-24T12:20:47.792Z",
+          "resolvedAt": "2026-11-24T12:20:48.800Z"
+        }
+      ]
+    },
+    "playerStakePayment": {
+      "payment_hash": "0xd6060374f11323cc839da954df7fccc9dfd4dbdcdfd8914dbf979bdac9e16809",
+      "status": "Failed",
+      "payment_preimage": null,
+      "fee": "0x0",
+      "failed_error": "InvoiceCancelled"
+    },
+    "playerWinningsInvoice": "Paid"
+  }
+}

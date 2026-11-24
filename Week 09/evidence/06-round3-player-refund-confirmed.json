@@ -1,0 +1,35 @@
+{
+  "capturedAt": "2026-11-24T12:21:11.008Z",
+  "command": "rps round:check round-20261124T122030-af2e39",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "round": {
+      "id": "round-20261124T122030-af2e39",
+      "createdAt": "2026-11-24T12:20:30.595Z",
+      "stake": {
+        "status": "refunded",
+        "amountCKB": "1",
+        "paymentHash": "0xaf2e396fd47021eb745c93200e3dc458551675bbbb6e012a75526e9305566cac",
+        "invoice": "fibt1000000001puy0wz86v4jgfw0pnm6vhyac3mjewvyjgwchzc2ljp3s08hs3z5cw9wcjwn6ywfkev4xm43c0mntk85tfenthvfrdnw0gnfn8c57xdrsj8f8d85g59wjkallqmemvluks7jj0td5wylnc8n7g4jwqljyvclwkge7zwa08lz03sua8laxc2arq435dlf958ywlgmhh0hvexcjajqk3485wz73z2ut4ldgft7f0msj4r3uhchrx0y396axj50eqfhlharqa6ue2s8xmz6yxewatffh68dhe30q0tf9k2vldet7r40xjg00lxcr7gkajj2wytlvvlnjfn9dkwscre0ndzl80q7l6fdfuq7nc2q9fzmqqxjlzsjhpywpzw2qeq6n7mmn73spmm9wp6",
+        "heldTlcExpiresAt": "2026-11-25T06:20:31.810Z",
+        "settleAttemptedAt": null,
+        "cancelAttemptedAt": "2026-11-24T12:20:38.394Z",
+        "resolvedAt": "2026-11-24T12:20:38.408Z"
+      },
+      "playerMove": "rock",
+      "outcome": "draw",
+      "payouts": []
+    },
+    "playerPayment": {
+      "payment_hash": "0xaf2e396fd47021eb745c93200e3dc458551675bbbb6e012a75526e9305566cac",
+      "status": "Failed",
+      "payment_preimage": null,
+      "fee": "0x0",
+      "failed_error": "InvoiceCancelled"
+    },
+    "channelPendingTlcs": {
+      "server": [],
+      "player": []
+    }
+  }
+}

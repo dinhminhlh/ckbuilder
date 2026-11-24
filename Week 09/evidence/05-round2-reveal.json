@@ -1,0 +1,14 @@
+{
+  "capturedAt": "2026-11-24T12:20:29.536Z",
+  "command": "rps round:reveal",
+  "source": "live RPC, CKB Testnet",
+  "result": {
+    "paymentHash": "0x94bb3325790fb95ce86ec68216ee87b0e901e5c019cf7d2b0c0c115350a63265",
+    "preimage": "0x033db5275afc9366c7cc17d2400687254bab2d6a1248afe12e37bb61ef52743a",
+    "serverMove": "scissors",
+    "playerCheck": {
+      "hashMatches": true,
+      "serverMoveFromPreimage": "scissors"
+    }
+  }
+}
